@@ -1,5 +1,5 @@
 <nav>
-    <div>amazingly menuistic: 
+    <div>menu: 
         <a href="/home/index">Home</a>
         <!--<a href="/home/restricted">restricted</a>-->
 

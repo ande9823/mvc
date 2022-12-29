@@ -6,8 +6,8 @@
      */
 ?>
 <h1>List of all users</h1>
-<table >
-    <thead >
+<table>
+    <thead>
         <tr>
         <?php foreach($viewbag['users'][0] as $header => $value) : ?>
         

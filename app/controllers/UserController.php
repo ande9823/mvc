@@ -33,11 +33,11 @@ class UserController extends Controller {
 		header('Location: /');	
 	}
 
-    //link to user/table.php - userlist
+    //link to user/user_list.php - userlist
     public function all_users () {
         if($this->logged_in()) {
             $viewbag['users'] = $this->model('user')->get_users();
-            $this->view('user', 'table', $viewbag);
+            $this->view('user', 'user_list', $viewbag);
         } else {
 			header('Location: /user/login');
 		}
@@ -46,7 +46,12 @@ class UserController extends Controller {
     //link to user/upload.php
     public function upload() {
         if($this->logged_in()) {
-			$this->view('user', 'upload');
+            if($this->method('post')) {
+                $this->model('User')->upload();
+                $this->view('user', 'upload');
+            } else {
+                $this->view('user', 'upload');
+            }
 		} else {
 			header('Location: /user/login');
 		}
@@ -55,7 +60,8 @@ class UserController extends Controller {
     //link
     public function feed () {
 		if($this->logged_in()) {
-			$this->view('user', 'feed');
+            $viewbag['images'] = $this->model('user')->feed();
+			$this->view('user', 'feed', $viewbag);
 		} else {
 			header('Location: /user/login');
 		}

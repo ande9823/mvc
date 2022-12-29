@@ -1,5 +1,5 @@
 <header>
-    fantastic header
+    header
 </header>
 <?php
 

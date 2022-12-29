@@ -11,3 +11,11 @@ CREATE TABLE user (
     username VARCHAR(126) NOT NULL,
     password VARCHAR(126)
 );
+
+CREATE TABLE images (
+    image_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(11) NOT NULL,
+    title VARCHAR(126) NOT NULL,
+    image BLOB NOT NULL,
+    description VARCHAR(126) NOT NULL
+);

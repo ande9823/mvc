@@ -1,11 +1,15 @@
 <h1>Login</h1>
 <form method="post" action="/user/login">
-    <div>    
+    <!--<div>    
         <label for="email">email address</label>
         <br>
         <input id="email" name="email">
+    </div>-->
+    <div>    
+        <label for="username">username</label>
+        <br>
+        <input id="username" name="username">
     </div>
-
     <div>    
         <label for="password">password</label>
         <br>
