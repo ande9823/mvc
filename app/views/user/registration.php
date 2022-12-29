@@ -15,7 +15,7 @@
     <div>    
         <label for="password">password</label>
         <br>
-        <input id="password" name="password" type="password">
+        <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\S{7,31}">
     </div>
 <!-- Regex for password: pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\S{7,31}"-->
     <button type="submit">Submit</button>

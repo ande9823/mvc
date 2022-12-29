@@ -125,7 +125,7 @@ class User extends Database {
 */
 
     public function feed() {
-        $sql = "SELECT user_id, title, image, description FROM images";
+        $sql = "SELECT username, title, image, description FROM images";
 		$stmt = $this->conn->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -224,25 +224,29 @@ class User extends Database {
                 $allowTypes = array('jpg','png','jpeg','gif'); 
                 if(in_array($fileType, $allowTypes)){ 
                     $image = $_FILES['image']['tmp_name']; 
+                    
                     //These following two go independently, but don't get decoded properly (giant string if used with base64_encode, but somewhat shorter if used alone)
                     //$image = addslashes(file_get_contents($image));
                     //$image = file_get_contents($image);
+                    
                     //$image = fopen($image, 'rb'); //seems to only have some form of image?
+                    
                     $image = base64_encode($image); //seems like this by itself only gives a path to a temp_file (best for now)
+                    
                     //$image = mysql_real_escape_string($image); //This don't work at all
                     
                     
                     // Insert image content into database 
-                    /*CHANGE user_id SO IT FITS WITH USER, MAYBE username INSTEAD*/
-                    $user_id = 1;
+                    /*CHANGE username SO IT FITS WITH USER*/
+                    $username = "test";
 		            $title = filter_var ( $_POST['title'], FILTER_UNSAFE_RAW);
                     $description = filter_var ( $_POST['description'], FILTER_UNSAFE_RAW);
         
         
-                    $sql = "INSERT INTO images (user_id, title, image, description) VALUES (:user_id, :title, :image, :description);";
+                    $sql = "INSERT INTO images (username, title, image, description) VALUES (:username, :title, :image, :description);";
 
                     $stmt = $this->conn->prepare($sql);
-                    $stmt->bindParam(':user_id', $user_id);
+                    $stmt->bindParam(':username', $username);
                     $stmt->bindParam(':title', $title);
                     $stmt->bindParam(':image', $image);
                     $stmt->bindParam(':description', $description);

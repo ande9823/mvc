@@ -14,8 +14,11 @@ CREATE TABLE user (
 
 CREATE TABLE images (
     image_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    user_id INT(11) NOT NULL,
+    username VARCHAR(126) NOT NULL,
     title VARCHAR(126) NOT NULL,
     image BLOB NOT NULL,
     description VARCHAR(126) NOT NULL
 );
+
+-- INSERT INTO user (emal, username, password) VALUES (test@test.dk, test, Test1234);
+-- INSERT INTO user (emal, username, password) VALUES (angaa19@student.sdu.dk, angaa19, angaa19Test);
