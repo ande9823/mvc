@@ -13,6 +13,8 @@ echo $json_test;
 */
 ?>
 
+<!--<img src="data:image/jpg;charset=utf8;base64,<?php //echo base64_encode($value); ?>"/>-->
+
 <h1>Feed of images</h1>
 <table>
     <thead>
@@ -31,8 +33,11 @@ echo $json_test;
             <?php foreach ($result as $index => $value) : 
             if($index == "image") : 
             $value = base64_decode($value);
+            echo "</br> image = ".$value."";
+            //data:image/jpg;charset=utf8;base64,<?php echo base64_encode($value);
             ?>
-                <td><?=$value?></td>
+                <td><img src="<?=$value?>"/></td>
+
             <?php else : ?>
                 <td><?=$value?></td>
             <?php endif;
