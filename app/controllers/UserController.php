@@ -47,7 +47,7 @@ class UserController extends Controller {
     public function upload() {
         if($this->logged_in()) {
             if($this->method('post')) {
-                $this->model('User')->upload();
+                $this->model('User')->upload($_SESSION['username']);
                 $this->view('user', 'upload');
             } else {
                 $this->view('user', 'upload');

@@ -7,13 +7,10 @@ class User extends Database {
 	 */
 	public function login(){
 		
-		//$email = filter_var ( $_POST['email'], FILTER_UNSAFE_RAW);
-		$username = filter_var ( $_POST['username'], FILTER_UNSAFE_RAW);
+        $username = filter_var ( $_POST['username'], FILTER_UNSAFE_RAW);
         $password = filter_var ( $_POST['password'], FILTER_UNSAFE_RAW);
         
 		
-		
-		//$result = $this->select_one ("user", "email", $email);
         $result = $this->select_one ("user", "username", $username);
 /*
 		$sql = "SELECT email, password FROM user WHERE email = :email";
@@ -23,8 +20,11 @@ class User extends Database {
 		$stmt->execute();
 		$result = $stmt->fetch(); //fetchAll would get multiple rows
 */		
-		return password_verify($password, $result['password']);
-
+		
+        //Used to  specify user in session varible, used when uploading.
+        $_SESSION['username'] = $username;
+        
+        return password_verify($password, $result['password']);
 	}
 
 	/**
@@ -76,7 +76,7 @@ class User extends Database {
     /**
 	 * Uploades image to images from the database
 	 */
-    public function upload() {
+    public function upload($user_name) {
         // If file upload form is submitted 
             if(!empty($_FILES["image"]["name"])) { 
                 // Get file info 
@@ -91,13 +91,8 @@ class User extends Database {
                     //this makes a blob to upload to a database
                     $image = file_get_contents($image);
                     
-                    //$image = base64_encode($image); 
-                    //seems like this by itself only gives a path to a temp_file (when decoded)
-                    
-                    
                     // Insert image content into database 
-                    //CHANGE username SO IT FITS WITH USER
-                    $username = "test";
+                    $username = $user_name;
 		            $title = filter_var ( $_POST['title'], FILTER_UNSAFE_RAW);
                     $description = filter_var ( $_POST['description'], FILTER_UNSAFE_RAW);
         
@@ -118,8 +113,7 @@ class User extends Database {
                 } 
             }else{ 
                 $statusMsg = 'Please select an image file to upload.'; 
-            }  
- 
+            } 
         // Display status message 
         echo $statusMsg; 
     }

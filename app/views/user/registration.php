@@ -10,6 +10,7 @@
         <label for="username">username</label>
         <br>
         <input id="username" name="username">
+<!-- Potential regex for username: pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" -->
     </div>
     
     <div>    

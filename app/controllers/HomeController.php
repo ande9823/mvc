@@ -21,13 +21,4 @@ class HomeController extends Controller {
 		$this->view('home', 'index', $viewbag);
 	}
 	
-	/**
-	 * Example of function that must only be called when user is logged in
-	 */
-	public function restricted () {
-
-			$this->view('home', 'restricted');
-
-	}
-	
 }

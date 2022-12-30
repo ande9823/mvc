@@ -20,5 +20,5 @@ CREATE TABLE images (
     description VARCHAR(126) NOT NULL
 );
 
+-- This is an example, but can't be used as it doesn't hash the password
 -- INSERT INTO user (emal, username, password) VALUES (test@test.dk, test, Test1234);
--- INSERT INTO user (emal, username, password) VALUES (angaa19@student.sdu.dk, angaa19, angaa19Test);
