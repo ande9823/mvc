@@ -34,6 +34,8 @@ YOU HAVE TO REGISTER THE USERS YOURSELF IN ORDER TO ACCESS THEM, AS migration.sq
     
     - DISCLAIMER WITH migration.sql -
     YOU HAVE TO REGISTER THE USERS YOURSELF IN ORDER TO ACCESS THEM, AS migration.sql CAN'T MAKE HASHED PASSWORDS EQUAL TO THE PHP HASHING - WONT GET SAME RESULTS WHEN TRYING TO LOGIN.
+    THE SAME WITH UPLOADING BLOB USING migration.sql, SO HAVE TO UPLOAD IMAGES YOURSELF: THERE ARE IMAGES IN (/public/assets/) TO TEST WITH.
+    
     
 - What you do with AJAX and where to find both JS and PHP code for it
     The AJAX call is used to load contents of fetch_info.html (/public/asstes/fetch_info.html) when clicked on a button, in index.php (/app/views/home/index.php). 
