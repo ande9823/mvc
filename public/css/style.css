@@ -44,11 +44,12 @@ th, td {
     outline: solid black 1px;
     text-align: center;
 }
-/*
-table {
-    margin: 0 auto;
+
+img {
+    /*max-width: 450px;*/
+    max-width: 25vw;
 }
-*/
+
 @media (max-width: 740px) {
     .container {
         background-color: aquamarine;

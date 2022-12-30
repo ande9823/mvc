@@ -21,7 +21,3 @@
 
     <button type="submit">Submit</button>
 </form>
-
-<img src="/public/assets/fish.jpg" alt="it's a fish"/>
-<br>
-<img src="/app/models/testimages/pokeball.jpg" alt="it's a pokeball"/>

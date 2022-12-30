@@ -16,7 +16,6 @@ class HomeController extends Controller {
 		
 		$viewbag['passed'] = [$param_a, $param_b];
 		$viewbag['math_result'] = $this->service('math')->add_random_number(2);
-		//$viewbag['dog_fact'] = $this->service('dog')->get_fact();
 		$viewbag['model'] = $this->model('home')->x_string("joe");
 		
 		$this->view('home', 'index', $viewbag);
@@ -26,11 +25,9 @@ class HomeController extends Controller {
 	 * Example of function that must only be called when user is logged in
 	 */
 	public function restricted () {
-		if($this->logged_in()) {
+
 			$this->view('home', 'restricted');
-		} else {
-			header('Location: /user/login');
-		}
+
 	}
 	
 }

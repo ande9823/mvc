@@ -7,6 +7,11 @@
      */
 ?>
 
+<h3>The button will show the login page using an ajax call when clicked.</h3>
+<p id="ajaxContent">This text will change</p>
+<button id="ajaxBtn">Get random Number</button>
+
+<br/><br/><br/>
 <p>First parameter accessed directly: <?=$viewbag['passed'][0] ?? '' ?> </p>
 <p>Passed parameters looped:
     <?php foreach ($viewbag['passed'] as $param) : ?>

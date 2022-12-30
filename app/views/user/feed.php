@@ -31,12 +31,13 @@ echo $json_test;
     
         <tr>
             <?php foreach ($result as $index => $value) : 
-            if($index == "image") : 
-            $value = base64_decode($value);
-            echo "</br> image = ".$value."";
-            //data:image/jpg;charset=utf8;base64,<?php echo base64_encode($value);
-            ?>
-                <td><img src="<?=$value?>"/></td>
+            if($index == "image") : ?>
+            
+                <td>
+                    <!-- encodes the blob to be read as data for an image source -->
+                    <!-- jpg, jpeg, png & gif works! -->
+                    <?php echo '<img src="data:image/jpg;base64,'.base64_encode($value).'"/>'; ?>
+                </td>
 
             <?php else : ?>
                 <td><?=$value?></td>
