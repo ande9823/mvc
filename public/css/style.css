@@ -40,6 +40,11 @@ footer {
     text-align: center;
 }
 
+#ajaxContent {
+    border: 1px solid black;
+    
+}
+
 th, td {
     outline: solid black 1px;
     text-align: center;

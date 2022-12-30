@@ -8,8 +8,8 @@ console.log("My Script");
 
 //Assignment 1 ajax call using fetch api build-in js.
 document.querySelector("#ajaxBtn").addEventListener('click', function(){
-    let randNum = rand(1,100).toString();
-    loadContent(randNum);
+    let file = "/public/assets/fetch_info.html";
+    loadContent(file);
 });
 /*    
 document.querySelector("#ajaxBtn").addEventListener('click', function(){

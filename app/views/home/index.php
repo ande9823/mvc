@@ -7,7 +7,7 @@
      */
 ?>
 
-<h3>The button will show the login page using an ajax call when clicked.</h3>
+<h3>The button will use an ajax call to chage the following p-tag when clicked.</h3>
 <p id="ajaxContent">This text will change</p>
 <button id="ajaxBtn">Get random Number</button>
 
